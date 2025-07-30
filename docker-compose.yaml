@@ -1,6 +1,11 @@
+version: "3.8"
+
 services:
   searxng:
     image: docker.io/searxng/searxng:latest
+    dns:
+      - 1.1.1.1     # Fast Cloudflare DNS
+      - 1.0.0.1
     volumes:
       - ./searxng:/etc/searxng:rw
     ports:
